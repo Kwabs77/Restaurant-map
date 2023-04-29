@@ -98,7 +98,7 @@ const SignUp: React.FC = () => {
           <label onClick={handleShow}> {!show?<BiShow size={20}/>:<BiHide size={20}/>}</label>
 
           <br />
-          <button type="submit"> SignUp </button>
+          <button type="submit"> Sign Up </button>
         </form>
       </div>
       </div>

@@ -60,7 +60,7 @@ export const Bookmarked: React.FC = () => {
       </div>
       <div className="bookmarkList">
         <div className="listRectangle">
-          <h2> Bookmarked List</h2>
+          <h2> {number!==0?'Bookmarked List': 'No Restaurant Bookmarked'}</h2>
         </div>
         {selectedList.map((list: any) => (
           <div key={list.index}>

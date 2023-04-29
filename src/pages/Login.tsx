@@ -66,9 +66,9 @@ const Login: React.FC = () => {
     event.preventDefault();
     let string = username.toString();
 
-    window.localStorage.setItem("username", email.current.value);
-    window.localStorage.setItem("password", pass.current.value);
-    window.localStorage.setItem("signUp", email.current.value);
+    // window.localStorage.setItem("username", email.current.value);
+    // window.localStorage.setItem("password", pass.current.value);
+    // window.localStorage.setItem("signUp", email.current.value);
 
     if (arr[string] === password) {
       toast.success("Login Successful ");

@@ -55,7 +55,7 @@ $primary: rgb(59, 159, 160);
     margin-top: 210px;
     border-radius: 25px;
     width: 400px;
-
+   
     label {
       margin-left: -25px;
     }
@@ -90,7 +90,8 @@ $primary: rgb(59, 159, 160);
       padding-top: 6px;
       padding-bottom: 6px;
       border: none;
-      color: black;
+      color: white;
+      font-weight: 700;
       border-radius: 25px;
       background-color: $primary;
       font-family: "Courier New", Courier, monospace;
@@ -254,11 +255,12 @@ $primary: rgb(59, 159, 160);
 .bookmarkList {
   margin: auto;
   text-align: center;
+  margin-top: 0;
 }
 
 .listRectangle {
   width: 75vw;
-  height: 48px;
+  height: 50px;
   text-align: center;
   color: white;
   padding-top: 10px;
