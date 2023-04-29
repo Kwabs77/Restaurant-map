@@ -1,13 +1,273 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: monospace, "Courier New", Courier;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.containerLogin {
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  width: 100%;
 }
+.containerLogin .box {
+  margin-top: 15px;
+  height: 95vh;
+  background-color: rgb(59, 159, 160);
+  width: 450px;
+  position: relative;
+  background: linear-gradient(45deg, rgba(59, 159, 160, 0.1), rgba(59, 159, 160, 0.3));
+  border-radius: 25px;
+  box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.4), 15px 15px 15px rgba(0, 0, 0, 0.1);
+}
+.containerLogin p {
+  margin-top: 25px;
+}
+.containerLogin img {
+  width: 800px;
+}
+.containerLogin .login {
+  box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.1), 15px 15px 15px rgba(0, 0, 0, 0.1);
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  text-align: center;
+  height: 250px;
+  margin: auto;
+  margin-top: 210px;
+  border-radius: 25px;
+  width: 400px;
+}
+.containerLogin .login label {
+  margin-left: -25px;
+}
+.containerLogin .login .input1 {
+  margin-top: 10px;
+}
+.containerLogin .login input {
+  border: none;
+  width: 350px;
+  font-size: 16px;
+  border-bottom: 3px solid rgb(59, 159, 160);
+  margin-bottom: 20px;
+}
+.containerLogin .login input::-moz-placeholder {
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 500;
+}
+.containerLogin .login input::placeholder {
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 500;
+}
+.containerLogin .login input:focus {
+  outline: none;
+}
+.containerLogin .login button {
+  margin-top: 10px;
+  width: 350px;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: none;
+  color: black;
+  border-radius: 25px;
+  background-color: rgb(59, 159, 160);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.restaurant {
+  margin-left: 35vw;
+  margin-top: 40px;
+  width: 900px;
+  position: absolute;
+}
+.restaurant .formContainer {
+  position: fixed;
+  width: 80vw;
+  padding: 5px;
+  padding-left: 120px;
+  padding-bottom: 10px;
+  top: 0;
+  left: 350px;
+  background: linear-gradient(to right, rgb(59, 159, 160), rgba(255, 255, 255, 0.6));
+}
+.restaurant .input {
+  width: 40vw;
+  height: 30px;
+  font-size: 20px;
+  padding-left: 10px;
+  border-radius: 15px 0 0 15px;
+  border: 1px solid rgb(59, 159, 160);
+}
+.restaurant .button {
+  width: 120px;
+  padding-top: 10.5px;
+  padding-bottom: 6px;
+  color: white;
+  border: none;
+  background: rgb(59, 159, 160);
+  border-radius: 0 15px 15px 0;
+  font-family: monospace, "Courier New", Courier;
+  font-size: 15px;
+}
+
+.containerHome {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+.tab {
+  width: 350px;
+  margin-top: 0px;
+  margin-left: 0px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgb(59, 159, 160));
+  color: white;
+  height: 100vh;
+  text-align: center;
+}
+.tab .fixed {
+  position: fixed;
+  width: 350px;
+  margin-top: 0px;
+  margin-left: 0px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgb(59, 159, 160));
+  color: white;
+  height: 100vh;
+  text-align: center;
+}
+.tab h2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 8px;
+  text-align: left;
+}
+.tab button {
+  width: 300px;
+  text-align: center;
+  height: 60px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  background-color: transparent;
+}
+.tab .span {
+  position: absolute;
+  left: 95px;
+  margin-top: -3px;
+}
+.tab .span1 {
+  position: absolute;
+  left: 2px;
+  margin-top: -3px;
+}
+
+.autoContain {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.autoComplete {
+  cursor: pointer;
+  margin-top: 10px;
+  position: fixed;
+  margin-right: auto;
+}
+.autoComplete .autoList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.autoComplete .autoList li {
+  list-style-type: none;
+  background-color: white;
+  width: 600px;
+}
+.autoComplete .autoList li:hover {
+  color: white;
+  background-color: rgb(59, 159, 160);
+}
+
+.restaurantList {
+  margin-left: 0px;
+  z-index: 10;
+  margin-top: 10px;
+}
+
+.bookContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  text-align: center;
+}
+.bookContainer .rectangle {
+  margin-left: 138px;
+  margin-bottom: 18px;
+}
+
+.bookmarkList {
+  margin: auto;
+  text-align: center;
+}
+
+.listRectangle {
+  width: 75vw;
+  height: 48px;
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+  background: linear-gradient(to right, rgb(59, 159, 160), rgba(255, 255, 255, 0.6));
+}
+
+.number {
+  background-color: rgb(59, 159, 160);
+  border-radius: 50%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.flex button {
+  background-color: red;
+  width: 100px;
+  height: 30px;
+  margin-top: 8px;
+  border-radius: 50px;
+}
+
+.rectangle {
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  background: linear-gradient(40deg, rgb(59, 159, 160), white);
+  color: white;
+  align-items: center;
+  border-radius: 15px 0px 0px 15px;
+}
+.rectangle .normal {
+  background: rgb(59, 159, 160);
+  padding: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.rectangle .red {
+  background: red;
+  padding: 8px;
+  color: white;
+  border-radius: 0px 15px 15px 0px;
+  border: none;
+  cursor: pointer;
+}/*# sourceMappingURL=index.css.map */
