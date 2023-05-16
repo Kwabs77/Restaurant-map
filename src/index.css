@@ -7,24 +7,33 @@
 
 .containerLogin {
   font-family: "Courier New", Courier, monospace;
+  position: relative;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.containerLogin .image {
+  position: relative;
+  margin: auto;
+}
+.containerLogin .image img {
   width: 100%;
+  height: 600px;
 }
 .containerLogin .box {
-  margin-top: 15px;
-  height: 95vh;
+  margin-right: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(59, 159, 160);
   width: 450px;
   position: relative;
+  height: 85vh;
   background: linear-gradient(45deg, rgba(59, 159, 160, 0.1), rgba(59, 159, 160, 0.3));
   border-radius: 25px;
   box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.4), 15px 15px 15px rgba(0, 0, 0, 0.1);
-}
-.containerLogin p {
-  margin-top: 25px;
-}
-.containerLogin img {
-  width: 800px;
 }
 .containerLogin .login {
   box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.1), 15px 15px 15px rgba(0, 0, 0, 0.1);
@@ -32,10 +41,12 @@
   background-color: white;
   text-align: center;
   height: 250px;
-  margin: auto;
-  margin-top: 210px;
+  margin-top: auto;
+  margin-bottom: auto;
   border-radius: 25px;
   width: 400px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .containerLogin .login label {
   margin-left: -25px;
@@ -79,19 +90,21 @@
 }
 
 .restaurant {
-  margin-left: 35vw;
   margin-top: 40px;
-  width: 900px;
-  position: absolute;
+  width: auto;
+  flex: 1 1 auto;
+  overflow-y: auto;
 }
 .restaurant .formContainer {
   position: fixed;
   width: 80vw;
   padding: 5px;
-  padding-left: 120px;
   padding-bottom: 10px;
   top: 0;
-  left: 350px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(to right, rgb(59, 159, 160), rgba(255, 255, 255, 0.6));
 }
 .restaurant .input {
@@ -113,6 +126,11 @@
   font-family: monospace, "Courier New", Courier;
   font-size: 15px;
 }
+.restaurant iframe {
+  margin: auto !important;
+  max-width: 770px;
+  max-height: 580px;
+}
 
 .containerHome {
   display: flex;
@@ -121,16 +139,10 @@
 }
 
 .tab {
-  width: 350px;
-  margin-top: 0px;
-  margin-left: 0px;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgb(59, 159, 160));
-  color: white;
-  height: 100vh;
-  text-align: center;
+  position: relative;
+  display: block;
 }
 .tab .fixed {
-  position: fixed;
   width: 350px;
   margin-top: 0px;
   margin-left: 0px;
@@ -138,6 +150,9 @@
   color: white;
   height: 100vh;
   text-align: center;
+  position: sticky !important;
+  top: 0;
+  display: block !important;
 }
 .tab h2 {
   padding-top: 10px;
@@ -165,6 +180,10 @@
   margin-top: -3px;
 }
 
+.au {
+  width: 100vw;
+}
+
 .autoContain {
   position: relative;
   display: flex;
@@ -175,17 +194,20 @@
   cursor: pointer;
   margin-top: 10px;
   position: fixed;
-  margin-right: auto;
+  z-index: 1;
+  width: 70vw;
 }
 .autoComplete .autoList {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .autoComplete .autoList li {
   list-style-type: none;
   background-color: white;
-  width: 600px;
+  width: 40vw;
 }
 .autoComplete .autoList li:hover {
   color: white;
@@ -193,9 +215,17 @@
 }
 
 .restaurantList {
-  margin-left: 0px;
-  z-index: 10;
+  position: relative;
   margin-top: 10px;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 55vw;
+  text-align: center;
+}
+
+iframe {
+  width: 55vw;
 }
 
 .bookContainer {
@@ -205,15 +235,17 @@
   margin: auto;
   text-align: center;
 }
-.bookContainer .rectangle {
-  margin-left: 138px;
-  margin-bottom: 18px;
-}
 
 .bookmarkList {
   margin: auto;
   text-align: center;
   margin-top: 0;
+  margin-left: 0px;
+  z-index: -1;
+}
+.bookmarkList iframe {
+  max-width: 770px;
+  max-height: 580px;
 }
 
 .listRectangle {
@@ -249,14 +281,17 @@ button {
 }
 
 .rectangle {
-  width: 700px;
+  width: 55vw;
   display: flex;
   justify-content: space-between;
   padding-left: 10px;
   background: linear-gradient(40deg, rgb(59, 159, 160), white);
   color: white;
   align-items: center;
+  text-align: center;
+  cursor: pointer;
   border-radius: 15px 0px 0px 15px;
+  margin: auto;
 }
 .rectangle .normal {
   background: rgb(59, 159, 160);
@@ -272,4 +307,242 @@ button {
   border-radius: 0px 15px 15px 0px;
   border: none;
   cursor: pointer;
+}
+
+.arrow {
+  display: none;
+}
+
+.dark {
+  display: none;
+}
+
+.phone-tab {
+  display: none;
+}
+
+@media screen and (max-width: 1010px) {
+  .containerLogin .box {
+    margin: auto;
+  }
+  .containerLogin .image {
+    display: none;
+  }
+}
+@media screen and (max-width: 525px) {
+  .box {
+    max-width: 90vw;
+  }
+  .box .login {
+    margin: auto;
+    width: 80vw;
+  }
+  .box input {
+    max-width: 75vw;
+  }
+  .box button {
+    max-width: 75vw;
+  }
+}
+@media screen and (max-width: 1200px) {
+  iframe {
+    height: 45vw;
+  }
+  .tab .fixed {
+    width: 29.25vw;
+  }
+  .tab button {
+    width: 200px;
+  }
+  .tab button .span {
+    position: relative;
+    left: -4px;
+  }
+  .tab button .span1 {
+    position: relative;
+    left: -4px;
+  }
+  .restaurant .formContainer {
+    width: 75.75vw;
+    left: auto;
+  }
+  .flex button {
+    width: 100px;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .flex button {
+    width: 60px;
+    padding: 0px;
+    font-size: 13px;
+  }
+  .tab h2 {
+    font-size: 20px;
+    padding-bottom: 15.5px;
+  }
+  .tab button {
+    font-size: 15px;
+    margin-left: 0;
+    margin: auto;
+    position: relative;
+    width: auto;
+    margin-top: 10px;
+    padding: 0 7px 0 7px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .tab {
+    display: none;
+  }
+  .restaurant {
+    display: block;
+    width: 90vw;
+  }
+  .restaurant .formContainer {
+    width: 100vw;
+  }
+  .restaurant .formContainer input {
+    height: 25px;
+    font-size: 11px;
+    width: 70vw;
+  }
+  .restaurant .formContainer button {
+    padding: 2px 0px 6px 0px;
+    width: 40px;
+  }
+  .restaurant .restaurantList {
+    width: 100vw;
+  }
+  iframe {
+    width: 90vw;
+    height: 70vw;
+  }
+  .rectangle {
+    margin: auto;
+    width: 80vw;
+    height: 20px;
+  }
+  .rectangle button {
+    height: 20px;
+  }
+  .rectangle .normal {
+    padding: 0px 2px;
+    cursor: pointer;
+  }
+  .rectangle .red {
+    padding: 0px 2px;
+    cursor: pointer;
+  }
+  .arrow {
+    display: block;
+    position: fixed;
+    top: 130px;
+    left: 0px;
+    background-color: rgb(59, 159, 160);
+    width: 30px;
+    height: 30px;
+    text-align: left;
+    z-index: 1;
+    color: white;
+    padding-top: 7px;
+    border-radius: 0 50px 50px 0;
+  }
+  .phone-tab {
+    position: relative;
+    display: block;
+  }
+  .phone-tab .fixed {
+    width: 200px;
+    margin-top: 0px;
+    margin-left: 0px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgb(59, 159, 160));
+    color: white;
+    height: 100vh;
+    text-align: center;
+    position: sticky !important;
+    top: 0;
+    display: block !important;
+  }
+  .phone-tab .span svg {
+    position: relative;
+    width: 15px;
+    top: 8px;
+    left: -3px;
+  }
+  .phone-tab .span1 svg {
+    position: relative;
+    width: 14px;
+    top: 8.5px;
+    left: -3px;
+  }
+  .phone-tab button {
+    width: 100px;
+    text-align: center;
+    height: 35px;
+    font-size: 13px;
+    position: relative;
+    bottom: 10px;
+    color: white;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  .flex {
+    padding-top: 5px;
+  }
+  .flex button {
+    background-color: red;
+    padding: 0px;
+    width: 60px;
+    height: 30px;
+  }
+  .dark {
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+  }
+  .bookmarkList {
+    width: 100vw;
+    height: 50px;
+  }
+  .bookmarkList h2 {
+    font-size: 20px;
+    width: 100vw;
+  }
+  .bookmarkList .listRectangle {
+    width: 100vw;
+  }
+  .bookmarkList .dark {
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+  }
+  .rectangle {
+    font-size: 11px;
+    position: relative;
+  }
+  .autoComplete {
+    width: 100vw;
+  }
+  .autoComplete .autoList {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .autoComplete .autoList li {
+    width: 70vw;
+  }
+}
+@media screen and (max-width: 300px) {
+  .rectangle {
+    font-size: 9px;
+  }
+  .rectangle button {
+    font-size: 9px;
+  }
+}
+.phoneDark {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
 }/*# sourceMappingURL=index.css.map */

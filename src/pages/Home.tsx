@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { Context } from "../Context";
 import Airtable from "airtable";
 import { AiOutlineHome } from "react-icons/ai";
-import { BsFillJournalBookmarkFill } from "react-icons/bs";
+import { BsFillJournalBookmarkFill, BsFillForwardFill } from "react-icons/bs";
+import { IoMdArrowRoundBack } from "react-icons/io";
+//import {BsFillForwardFill}  from 'react-icons/bs'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -86,9 +88,18 @@ export const Home: React.FC = () => {
     toast.success("Logout Successful");
   };
   //console.log(selectedList);
+
+  const [close, setClose] = useState(true);
+  const handleSideBar = () => {
+    setClose(!close);
+  };
+
   return (
     <div className="containerHome">
-      <div className="tab">
+      <div className="arrow" onClick={handleSideBar}>
+        {close ? <BsFillForwardFill /> : <IoMdArrowRoundBack size={17} />}
+      </div>
+      <div className={close ? "tab" : "phone-tab"}>
         <div className="fixed">
           <div className="flex">
             <h2>Sidebar</h2>
@@ -118,9 +129,14 @@ export const Home: React.FC = () => {
             </button>
           </Link>
           <hr />
+          <button>
+            <div className="arrow" onClick={handleSideBar}>
+              <IoMdArrowRoundBack size={17} />
+            </div>
+          </button>
         </div>
       </div>
-      <div className="restaurant">
+      <div className={close ? "restaurant" : "dark restaurant"}>
         <div className="formContainer">
           <form className="form" onSubmit={handleSubmit}>
             <input
@@ -220,6 +236,8 @@ export const Home: React.FC = () => {
         </div>
       </div>
       <ToastContainer />
+
+      <div className="dark"></div>
     </div>
   );
 };

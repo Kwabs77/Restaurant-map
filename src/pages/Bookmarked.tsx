@@ -1,16 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AiOutlineHome } from "react-icons/ai";
-import { BsFillJournalBookmarkFill } from "react-icons/bs";
+import { BsFillJournalBookmarkFill, BsFillForwardFill } from "react-icons/bs";
 import { Context } from "../Context";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 export const Bookmarked: React.FC = () => {
   const context = useContext(Context);
   const { setAllList, setSelectedList, allList, selectedList } = context;
 
-  console.log(selectedList.length);
+//  console.log(selectedList.length);
 
   let number = selectedList.length;
 
@@ -24,9 +25,17 @@ export const Bookmarked: React.FC = () => {
     toast.success("Logout Successful");
   };
 
+  const [close, setClose] = useState(true);
+  const handleSideBar = () => {
+    setClose(!close);
+  };
+
   return (
     <div className="bookContainer">
-      <div className="tab">
+      <div className="arrow" onClick={handleSideBar}>
+        <BsFillForwardFill />
+      </div>
+      <div className={close ? "tab" : "phone-tab"}>
         <div className="fixed">
           <div className="flex">
             <h2>Sidebar</h2>
@@ -56,14 +65,22 @@ export const Bookmarked: React.FC = () => {
             </button>
           </Link>
           <hr />
+          <button>
+            <div className="arrow" onClick={handleSideBar}>
+              <IoMdArrowRoundBack size={17} />
+            </div>
+          </button>
         </div>
       </div>
-      <div className="bookmarkList">
+      <div className={close?  "bookmarkList" : 'bookmarkList phoneDark'}>
         <div className="listRectangle">
-          <h2> {number!==0?'Bookmarked List': 'No Restaurant Bookmarked'}</h2>
+          <h2>
+            {" "}
+            {number !== 0 ? "Bookmarked List" : "No Restaurant Bookmarked"}
+          </h2>
         </div>
         {selectedList.map((list: any) => (
-          <div key={list.index}>
+          <div key={list.index} >
             {" "}
             {
               <iframe

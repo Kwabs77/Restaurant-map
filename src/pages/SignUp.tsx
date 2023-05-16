@@ -107,3 +107,35 @@ const SignUp: React.FC = () => {
 };
 
 export default SignUp;
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+window.addEventListener('load',()=>{
+
+  const name= document.querySelector('#name');
+  const username = localStorage.getItem('username') || '';
+
+  name.value = username;
+
+  name.addEventListener('change', (e)=>{
+    localStorage.setItem('username', e.target.value);
+  })
+
+})
+
+
+
+
+
+*/

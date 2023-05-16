@@ -5,8 +5,7 @@ import login from "../assests/Login.jpg";
 import { Context } from "../Context";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {BiShow,BiHide  } from "react-icons/bi";
-
+import { BiShow, BiHide } from "react-icons/bi";
 
 const Login: React.FC = () => {
   interface api {
@@ -29,7 +28,7 @@ const Login: React.FC = () => {
   const pass: any = useRef();
   const localUSer = window.localStorage.getItem("username");
   const localPass = window.localStorage.getItem("password");
-  const [show, setShow]=useState(false)
+  const [show, setShow] = useState(false);
 
   let base = new Airtable({ apiKey: "key3Eh1zQy7lHNUoW" }).base(
     "appuf4PguTkzP8Bqc"
@@ -43,21 +42,6 @@ const Login: React.FC = () => {
       });
   }, []);
 
- 
-  // let base = new Airtable({ apiKey: "keyfXgn8PL6pB3x32" }).base(
-  //   "appjWdL7YgpxIxCKA"
-  // );
-  // useEffect(() => {
-  //   base("Grid view")
-  //     .select({ view: "Grid view" })
-  //     .eachPage((records: any, fetchNextPage) => {
-  //       setApiUSer(records);
-  //       fetchNextPage();
-  //     });
-  // }, []);
-
-  
-
   for (let i = 0; i < apiUser.length; i++) {
     arr[apiUser[i].fields.username] = apiUser[i].fields.password;
   }
@@ -66,81 +50,73 @@ const Login: React.FC = () => {
     event.preventDefault();
     let string = username.toString();
 
-    // window.localStorage.setItem("username", email.current.value);
-    // window.localStorage.setItem("password", pass.current.value);
-    // window.localStorage.setItem("signUp", email.current.value);
-
     if (arr[string] === password) {
       toast.success("Login Successful ");
       history("/home");
       window.localStorage.setItem("username", string);
       window.localStorage.setItem("password", password);
-      
     } else if (
       email.current.value === localUSer &&
       pass.current.value === localPass
     ) {
       toast.success("Login Successful");
       history("/home");
-      
     } else {
       toast.error("Credentials does not match");
     }
   };
 
-   const handleShow=()=>{
-    setShow(!show)
-   }
+  const handleShow = () => {
+    setShow(!show);
+  };
 
   //console.log(location);
 
   return (
     <div className="containerLogin">
       <div className="image">
-                <img src={login} />
-  
-        
+        <img src={login} />
       </div>
       <div className="box">
-       <div className="color">
-        <div className="login">
-      
+        <div className="color">
+          <div className="login">
+            <h1> Login </h1>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                className="input1"
+                value={username}
+                placeholder="Enter your username"
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
+                ref={email}
+                required
+              />
+              <br />
+              <input
+                type={!show ? "password" : "text"}
+                value={password}
+                placeholder="Enter your password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+                ref={pass}
+                required
+              />
+              <label onClick={handleShow}>
+                {" "}
+                {!show ? <BiShow size={20} /> : <BiHide size={20} />}
+              </label>
+              <br />
+              <button type="submit"> Login </button>
+            </form>
 
-        <h1> Login </h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            className="input1"
-            value={username}
-            placeholder="Enter your username"
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
-            ref={email}
-            required
-          />
-          <br />
-          <input
-            type={!show?"password":"text"}
-            value={password}
-            placeholder="Enter your password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            
-            ref={pass}
-            required
-          />
-          <label onClick={handleShow}> {!show?<BiShow size={20}/>:<BiHide size={20}/>}</label>
-          <br />
-          <button type="submit"> Login </button>
-        </form>
-
-        <p>
-          Don't have an account? <Link to="signUp"> Sign Up </Link>
-        </p>
+            <p>
+              Don't have an account? <Link to="signUp"> Sign Up </Link>
+            </p>
+          </div>
         </div>
-      </div>
       </div>
       <ToastContainer />
     </div>

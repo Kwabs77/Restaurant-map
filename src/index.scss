@@ -8,15 +8,31 @@ $primary: rgb(59, 159, 160);
 
 .containerLogin {
   font-family: "Courier New", Courier, monospace;
+  position: relative;
   display: flex;
-  width: 100%;
-
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  .image {
+    position: relative;
+    margin: auto;
+    img {
+      width: 100%;
+      height: 600px;
+    }
+  }
   .box {
-    margin-top: 15px;
-    height: 95vh;
+    margin-right: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: $primary;
     width: 450px;
     position: relative;
+    height: 85vh;
+
     background: linear-gradient(
       45deg,
       rgba(59, 159, 160, 0.1),
@@ -27,23 +43,6 @@ $primary: rgb(59, 159, 160);
       15px 15px 15px rgba(0, 0, 0, 0.1);
   }
 
-  // rgba(255, 255, 255, 0.6)
-  // .color{
-  //   background-color: #ffffff10;
-  //   backdrop-filter: blur(15px);
-  //   height: 95vh;
-  //   margin-top: 0px
-
-  // }
-
-  p {
-    margin-top: 25px;
-  }
-
-  img {
-    width: 800px;
-  }
-
   .login {
     box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.1),
       15px 15px 15px rgba(0, 0, 0, 0.1);
@@ -51,11 +50,13 @@ $primary: rgb(59, 159, 160);
     background-color: white;
     text-align: center;
     height: 250px;
-    margin: auto;
-    margin-top: 210px;
+    margin-top: auto;
+    margin-bottom: auto;
     border-radius: 25px;
     width: 400px;
-   
+    margin-left: 20px;
+    margin-right: 20px;
+
     label {
       margin-left: -25px;
     }
@@ -100,20 +101,25 @@ $primary: rgb(59, 159, 160);
 }
 
 .restaurant {
-  margin-left: 35vw;
+  // margin-left: 35vw;
   //margin-right: auto;
   margin-top: 40px;
-  width: 900px;
-  position: absolute;
+  width: auto;
+
+  flex: 1 1 auto;
+  overflow-y: auto;
 
   .formContainer {
     position: fixed;
     width: 80vw;
     padding: 5px;
-    padding-left: 120px;
+    // padding-left: 120px;
     padding-bottom: 10px;
     top: 0;
-    left: 350px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(to right, $primary, rgba(255, 255, 255, 0.6));
   }
   .input {
@@ -136,26 +142,33 @@ $primary: rgb(59, 159, 160);
     font-family: monospace, "Courier New", Courier;
     font-size: 15px;
   }
+
+  iframe {
+    margin: auto !important;
+    max-width: 770px;
+    max-height: 580px;
+  }
 }
 
 .containerHome {
   display: flex;
   width: 100vw;
   justify-content: space-between;
+  // flex-wrap: wrap;
 }
 .tab {
-  width: 350px;
-  margin-top: 0px;
-  margin-left: 0px;
-  // background-color: rgb(254,171,4);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), $primary);
-  color: white;
-  height: 100vh;
-  // position: fixed;
-  text-align: center;
+  // width: 350px;
+  // margin-top: 0px;
+  // margin-left: 0px;
+  // // background-color: rgb(254,171,4);
+  // background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), $primary);
+  // color: white;
+  // height: 100vh;
+  // text-align: center;
+  position: relative;
+  display: block;
 
   .fixed {
-    position: fixed;
     width: 350px;
     margin-top: 0px;
     margin-left: 0px;
@@ -165,6 +178,9 @@ $primary: rgb(59, 159, 160);
     height: 100vh;
     // position: fixed;
     text-align: center;
+    position: sticky !important;
+    top: 0;
+    display: block !important;
   }
 
   h2 {
@@ -196,7 +212,9 @@ $primary: rgb(59, 159, 160);
     margin-top: -3px;
   }
 }
-
+.au {
+  width: 100vw;
+}
 .autoContain {
   position: relative;
   display: flex;
@@ -207,21 +225,21 @@ $primary: rgb(59, 159, 160);
   cursor: pointer;
   margin-top: 10px;
   position: fixed;
-  //  margin-left: 20%;
-  margin-right: auto;
+  z-index: 1;
+  width: 70vw;
 
   .autoList {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     li {
       list-style-type: none;
       background-color: white;
-      //   margin-left: 28%;
-      //   margin-right: 50%;
+      width: 40vw;
 
-      width: 600px;
       &:hover {
         color: white;
         background-color: $primary;
@@ -231,12 +249,18 @@ $primary: rgb(59, 159, 160);
 }
 
 .restaurantList {
-  margin-left: 0px;
-  //position: absolute;
-  //   margin-left: 30%;
-  //  margin-right: 30%;
-  z-index: 10;
+  position: relative;
+  // z-index: -2;
   margin-top: 10px;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 55vw;
+  text-align: center;
+}
+
+iframe {
+  width: 55vw;
 }
 
 .bookContainer {
@@ -245,17 +269,19 @@ $primary: rgb(59, 159, 160);
   flex-direction: row;
   margin: auto;
   text-align: center;
-
-  .rectangle {
-    margin-left: 138px;
-    margin-bottom: 18px;
-  }
 }
 
 .bookmarkList {
   margin: auto;
   text-align: center;
   margin-top: 0;
+  margin-left: 0px;
+  z-index: -1;
+
+  iframe {
+    max-width: 770px;
+    max-height: 580px;
+  }
 }
 
 .listRectangle {
@@ -290,15 +316,17 @@ button {
 }
 
 .rectangle {
-  width: 700px;
+  width: 55vw;
   display: flex;
   justify-content: space-between;
   padding-left: 10px;
   background: linear-gradient(40deg, $primary, white);
   color: white;
   align-items: center;
-
+  text-align: center;
+  cursor: pointer;
   border-radius: 15px 0px 0px 15px;
+  margin: auto;
 
   .normal {
     background: $primary;
@@ -316,4 +344,297 @@ button {
     border: none;
     cursor: pointer;
   }
+}
+
+.arrow {
+  display: none;
+}
+.dark {
+  display: none;
+}
+
+.phone-tab {
+  display: none;
+}
+@media screen and (max-width: 1010px) {
+  .containerLogin {
+    .box {
+      margin: auto;
+    }
+    .image {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .box {
+    max-width: 90vw;
+
+    .login {
+      margin: auto;
+      width: 80vw;
+    }
+
+    input {
+      max-width: 75vw;
+    }
+
+    button {
+      max-width: 75vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  iframe {
+    height: 45vw;
+  }
+
+  .tab {
+    .fixed {
+      width: 29.25vw;
+    }
+
+    button {
+      width: 200px;
+
+      .span {
+        position: relative;
+        left: -4px;
+      }
+
+      .span1 {
+        position: relative;
+        left: -4px;
+      }
+    }
+  }
+  .restaurant {
+    .formContainer {
+      width: 75.75vw;
+      left: auto;
+    }
+  }
+  .flex {
+    button {
+      width: 100px;
+      padding: 0px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .flex {
+    button {
+      width: 60px;
+      padding: 0px;
+      font-size: 13px;
+    }
+  }
+
+  .tab {
+    h2 {
+      font-size: 20px;
+      padding-bottom: 15.5px;
+    }
+
+    button {
+      font-size: 15px;
+      margin-left: 0;
+      margin: auto;
+      position: relative;
+      width: auto;
+      margin-top: 10px;
+      padding: 0 7px 0 7px;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .tab {
+    display: none;
+  }
+
+  .restaurant {
+    display: block;
+    width: 90vw;
+
+    .formContainer {
+      width: 100vw;
+      input {
+        height: 25px;
+        font-size: 11px;
+        width: 70vw;
+      }
+      button {
+        padding: 2px 0px 6px 0px;
+        width: 40px;
+      }
+    }
+
+    .restaurantList {
+      width: 100vw;
+    }
+  }
+
+  iframe {
+    width: 90vw;
+    height: 70vw;
+  }
+
+  .rectangle {
+    margin: auto;
+    width: 80vw;
+    height: 20px;
+    button {
+      height: 20px;
+    }
+
+    .normal {
+      padding: 0px 2px;
+      cursor: pointer;
+    }
+
+    .red {
+      padding: 0px 2px;
+      cursor: pointer;
+    }
+  }
+
+  .arrow {
+    display: block;
+    position: fixed;
+    top: 130px;
+    left: 0px;
+    background-color: $primary;
+    width: 30px;
+    height: 30px;
+    //   align-items: left;
+    text-align: left;
+    z-index: 1;
+    color: white;
+    padding-top: 7px;
+    border-radius: 0 50px 50px 0;
+  }
+
+  .phone-tab {
+    position: relative;
+    display: block;
+
+    .fixed {
+      width: 200px;
+      margin-top: 0px;
+      margin-left: 0px;
+      // background-color: rgb(254,171,4);
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), $primary);
+      color: white;
+      height: 100vh;
+      // position: fixed;
+      text-align: center;
+      position: sticky !important;
+      top: 0;
+      display: block !important;
+    }
+
+    .span {
+      svg {
+        position: relative;
+        width: 15px;
+        top: 8px;
+        left: -3px;
+      }
+    }
+
+    .span1 {
+      svg {
+        position: relative;
+        width: 14px;
+        top: 8.5px;
+        left: -3px;
+      }
+    }
+
+    button {
+      width: 100px;
+
+      text-align: center;
+      height: 35px;
+      font-size: 13px;
+      position: relative;
+      bottom: 10px;
+      color: white;
+      border: none;
+      background-color: transparent;
+      text-decoration: none;
+    }
+  }
+
+  .flex {
+    padding-top: 5px;
+
+    button {
+      background-color: red;
+      padding: 0px;
+      width: 60px;
+      height: 30px;
+    }
+  }
+
+  .dark {
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+  }
+
+  .bookmarkList {
+    width: 100vw;
+    height: 50px;
+
+    h2 {
+      font-size: 20px;
+      width: 100vw;
+    }
+
+    .listRectangle {
+      width: 100vw;
+    }
+
+    .dark {
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 100vh;
+    }
+  }
+
+  .rectangle {
+    font-size: 11px;
+    position: relative;
+  }
+  .autoComplete {
+    width: 100vw;
+    .autoList {
+      margin-left: auto;
+      margin-right: auto;
+
+      li {
+        width: 70vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .rectangle {
+    font-size: 9px;
+    button {
+      font-size: 9px;
+    }
+  }
+}
+
+.phoneDark {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
 }
