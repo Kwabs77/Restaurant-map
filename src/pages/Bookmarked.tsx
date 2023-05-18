@@ -33,7 +33,7 @@ export const Bookmarked: React.FC = () => {
   return (
     <div className="bookContainer">
       <div className="arrow" onClick={handleSideBar}>
-        <BsFillForwardFill />
+      {close ? <BsFillForwardFill /> : <IoMdArrowRoundBack size={17} />}
       </div>
       <div className={close ? "tab" : "phone-tab"}>
         <div className="fixed">

@@ -447,6 +447,7 @@ button {
     color: white;
     padding-top: 7px;
     border-radius: 0 50px 50px 0;
+    z-index: 2;
   }
   .phone-tab {
     position: relative;
